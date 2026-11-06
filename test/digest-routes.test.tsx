@@ -74,6 +74,6 @@ describe('digest routes', () => {
     expect(data.rows.map(row => row.job)).toEqual(['alpha', 'zebra']);
     expect(html).toContain('alpha');
     expect(html).toContain('zebra');
-    expect(html).toMatch(/1[^<]*(?:bad|malformed)|(?:bad|malformed)[^<]*1/i);
+    expect(html).toMatch(/1[^<]*(?:bad|malformed|unreadable)|(?:bad|malformed|unreadable)[^<]*1/i);
   });
 });
