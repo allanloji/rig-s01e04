@@ -31,8 +31,11 @@ export function countNightEvents(runsDir: string, night: string): EventCounts {
     const record = event as Record<string, unknown>;
     if (
       typeof record.at !== 'string' ||
+      !Number.isFinite(Date.parse(record.at)) ||
       typeof record.job !== 'string' ||
+      record.job.trim().length === 0 ||
       (record.owner !== null && typeof record.owner !== 'string') ||
+      (record.error !== undefined && typeof record.error !== 'string') ||
       (record.status !== 'ok' && record.status !== 'retry' && record.status !== 'fail')
     ) continue;
     counts[record.status] += 1;
