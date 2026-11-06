@@ -3,7 +3,7 @@ import type { RigConfig } from '../config.js';
 import { readNight } from '../digest/reader.js';
 import { lane } from '../lane.js';
 import { Layout } from '../views/layout.js';
-import { DigestPage } from '../digest/page.js';
+import { DigestPage } from '../views/digest.js';
 
 export function registerDigestPage(app: Hono, config: RigConfig): void {
   app.get('/digest/:night', (c) => {

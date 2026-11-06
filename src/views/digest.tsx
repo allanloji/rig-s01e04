@@ -1,4 +1,4 @@
-import type { DigestRow, NightDigest } from './types.js';
+import type { DigestRow, NightDigest } from '../digest/types.js';
 
 function shown(value: string | null): string {
   return value ?? '—';
